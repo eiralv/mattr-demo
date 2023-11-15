@@ -1,7 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { issueCredential } from "./issueCredential";
 
 export async function GET(req: NextApiRequest, res: NextApiResponse) {
-    console.log('object');
+    issueCredential();
 
-    return new Response()
+    return new Response("OK")
 }
