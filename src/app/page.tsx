@@ -17,6 +17,10 @@ export default function Home() {
     setUrl(url);
   }
 
+  async function verifyCredential(): Promise<void> {
+    const res = await fetch('/api/verify');
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
       <p>Hello</p>
@@ -25,6 +29,9 @@ export default function Home() {
       </button>
       <button className='bg-blue-500 mb-4 mt-3 p-3 rounded-md' onClick={() => issueCrededential()}>
         Issue credz
+      </button>
+      <button className='bg-green-500 mb-4 p-3 rounded-md' onClick={() => verifyCredential()}>
+        Verify credz
       </button>
       {
         url ?
